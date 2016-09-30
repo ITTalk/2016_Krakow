@@ -1,0 +1,21 @@
+@{ ViewData["Title"] = "It Talk!"; }
+<div ng-app="serverApp" ng-controller="MainController as $ctrl" class="container-fluid body-content" >
+    <div class="spinner" ng-class="{'in': $ctrl.$isFetchingData}">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <h2>Pobieranie danych...</h2>
+    </div>
+
+        <div class="flip-wrapper" ng-repeat="node in $ctrl.nodes" ng-style="{ 'width' : (100 / $ctrl.getNumberOfNodes()) + '%', 'left' : (100 / $ctrl.getNumberOfNodes() * $index) + '%' }">
+            <div class="flip-panel" ng-class="{'flipped': node.status === statuses.registered}">
+                <div class="flip-content front">
+                    <div class="number" ng-bind="node.id"></div>
+                </div>
+                <div class="flip-content back">
+                    <img ng-attr-src="{{'data:image/jpeg;base64,' + node.image}}" class="image" />
+                    <div class="panel-details">
+                        Received at <span class="time">{{node.registeredAt | date : 'HH:mm'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

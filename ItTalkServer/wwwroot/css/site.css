@@ -1,0 +1,149 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    margin: 0;
+    background: url('../images/image-placeholder.png') no-repeat center center fixed; 
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"]
+{
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+}
+
+/* flip container */
+
+.flip-wrapper {
+    padding: 0;
+    margin: 0; 
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.image {
+    width:100%;
+}
+
+.flip-panel {
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.flip-panel.flipped {
+    transform: rotateY( 180deg );
+}
+
+.flip-content {
+    margin: 0;
+    display: block;
+    width: 100%;
+    backface-visibility: hidden;
+    height:100%;
+    position: absolute;
+}
+
+.flip-content.front {
+    background: #f8f8f8;
+}
+
+.flip-content.back {
+    background: #337ab7;
+    transform: rotateY( 180deg );
+}
+
+/* spinner */
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.spinner:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.spinner.in {
+    display: block;
+    opacity: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #6f6f6f;
+    text-align: right;
+    padding: 8px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.number {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    padding-top: 54px;
+    text-align: center;
+    font-size: 64px;
+    color: #bdbdbd;
+}
+
+.panel-details {
+    position: absolute;
+    top: 0;
+    background-color: rgba(255,255,255,0.8);
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    font-size: 12px;
+    color: #808080;
+}
+
+.panel-details .time {
+    display: block;
+    font-size: 28px;
+}

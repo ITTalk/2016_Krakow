@@ -1,0 +1,36 @@
+[
+  // {
+  //   "outputFileName": "wwwroot/dist/css/site.min.css",
+  //   "inputFiles": [
+  //     "wwwroot/css/site.css"
+  //   ]
+  // },
+  // {
+  //   "outputFileName": "wwwroot/dist/css/libs.min.css",
+  //   "inputFiles": [
+  //     "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
+  //   ]
+  // },
+  {
+    "outputFileName": "wwwroot/dist/js/libs.min.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/lib/signalr/jquery.signalR.js",
+      "wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "wwwroot/lib/angular/angular.js",
+      "wwwroot/lib/angular-signalr-hub/signalr-hub.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/dist/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js",
+      "wwwroot/js/ng/app.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]
