@@ -21,9 +21,33 @@ sudo apt-get install dotnet-dev-1.0.0-preview2-003131
 * ITTalk_Project_Version - wersja aplikacji ze źródłami
 * ItTalkServer - serwer
 
-## ITTalk Server.
-Najpierw trzeba uruchomić ItTalkServer
-w tym celu w konsoli 
+## ITTalk Server
+Najpierw trzeba uruchomić ItTalkServer.
+Aby upewnić się, że serwer poprawnie się buduje, wykonaj:
+
+```bash
+cd ItTalkServer
+dotnet restore 
+dotnet build 
+```
+
+Następnie należy stworzyć obraz:
+
+```bash
+docker build -t ittalkserver .
+```
+
+Upewnij się, że został stworzony i znajduje się na liście :
+```bash
+docker images
+```
+
+Ostatnim krokiem jest uruchomienie kontenera z opcją przekazania portów:
+```bash
+docker run -it -p "5000:5000" ittalkserver
+```
+
+W przeglądarce pod adresem **192.168.99.100:5000** dostępna jest strona serwera.
 
 ## ITTalk_Nuget_Version
 Aby uruchomić wersję nuget i wygenerowac obrazek.
